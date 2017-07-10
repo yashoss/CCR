@@ -9,6 +9,8 @@ function initialize() {
       center: new google.maps.LatLng(37.320474,-121.826318),
       scrollwheel: false
     };
+      
+    map = new google.maps.Map(document.getElementById('map-canvas'),  mapOptions);
 
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(37.320474,-121.826318),
@@ -16,9 +18,6 @@ function initialize() {
       title: 'Computer and Cellphone Repair\n1692 Tully Rd, San Jose'
     });
 
-    map = new google.maps.Map(document.getElementById('map-canvas'),  mapOptions);
-
-    marker.setMap(map);
 
     google.maps.event.addDomListener(map, 'idle', function() {
         calculateCenter();
@@ -36,7 +35,7 @@ function calculateCenter() {
 function loadGoogleMap(){
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCbCJSxtObL-0675mcR4OuOzK-BKCHsfxA&' + 'callback=initialize';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAfrzAoPN1kG8vuOY5QG3SS5c1Bake6jpk&' + 'callback=initialize';
     document.body.appendChild(script);
 }
 
